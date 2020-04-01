@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+
+
+<body class="app">
+
+    <div class="app__header">
+        <h1 class="app__header--title">Covid19 Tracker & Reminder</h1>
+    </div>
+
+    <div class="app__body">
+
+        <div class="app__body--tabbar">
+            <div class="tab __1 reminder-tab active">Reminder</div>
+            <div class="tab __2 tracker-tab">Tracker</div>
+        </div>
+
+        <div class="reminder-content">
+
+            <div class="app__body--info">
+                <div class="info">
+                    <span class="info__title">Hands washed</span>
+                    <span class="info__value"><span id="times-washed">0</span> times</span>
+                </div>
+                <div class="info">
+                    <span class="info__title">Next wash in</span>
+                    <span class="info__value"><span id="next-wash-timer">0 minutes</span></span>
+                </div>
+                <div class="info">
+                    <span class="info__title">Time passed</span>
+                    <span class="info__value">
+                        <div id="passed-time">0 seconds</div>
+                    </span>
+                </div>
+                <div class="info">
+                    <div class="progress-bar">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="info toggle-mode">
+                    <span class="info__title">
+                        <span>Tab mode</span>
+                        <span class="icon info">
+                            <svg>
+                                <use xlink:href="#info"></use>
+                            </svg>
+                        </span>
+                        <span class="tab-info-text">If checked will create a new tab after times up.</span>
+                    </span>
+                    <span class="info__value">
+                        <input type="checkbox" class="toggle" id="tab-mode-toggle">
+                    </span>
+                </div>
+                <div class="info select-delay">
+                    <span class="info__title">Wash hands every</span>
+                    <span class="info__value">
+                        <select id="wash-delay">
+                            <option value="30">30 minutes</option>
+                            <option value="45">45 minutes</option>
+                            <option value="60">60 minutes</option>
+                        </select>
+                        <div class="selected-time-status-dot"></div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="app__body--actions">
+                <button class="btn wash-now">I will wash now</button>
+                <button class="btn pause">Pause</button>
+            </div>
+
+        </div>
+
+        <div class="tracker-content hide">
+
+            <div class="app__body--info">
+                <div class="info">
+                    <span class="info__title">Location</span>
+                    <span class="info__value">
+                        <input type="text" id="location" value="World" list="locations-list" placeholder="type here">
+                        <datalist id="locations-list">
+                            <option>world</option>
+                            <option>india</option>
+                            <option>china</option>
+                            <option>singapore</option>
+                            <option>italy</option>
+                        </datalist>
+                    </span>
+                </div>
+                <div class="info">
+                    <span class="info__title">Infected</span>
+                    <span class="info__value">
+                        <span class="show-change" id="infected-change">0</span>
+                        <span class="number" id="infected">0</span>
+                    </span>
+                </div>
+                <div class="info">
+                    <span class="info__title">Recovered</span>
+                    <span class="info__value">
+                        <span class="show-change" id="recovered-change">0</span>
+                        <span class="number" id="recovered">0</span>
+                    </span>
+                </div>
+                <div class="info">
+                    <span class="info__title">Deaths</span>
+                    <span class="info__value">
+                        <span class="show-change" id="deaths-change">0</span>
+                        <span class="number" id="deaths">0</span>
+                    </span>
+                </div>
+                <div class="info most-effected">
+                    <div class="country-info most-infected">
+                        <span class="title">Most infected</span>
+                        <span id="most-infected-country">0</span>
+                    </div>
+                    <div class="country-info most-deaths">
+                        <span class="title">Most deaths</span>
+                        <span id="most-deaths-country">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app__body--actions">
+                <button class="btn refresh">
+                    <span class="btn-info">Refresh data</span>
+                    <div class="icons-container">
+                        <span class="icon refresh">
+                            <svg>
+                                <use xlink:href="#refresh"></use>
+                            </svg>
+                        </span>
+                        <span class="icon cross">
+                            <svg>
+                                <use xlink:href="#cross"></use>
+                            </svg>
+                        </span>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="app__footer">
+        <p class="quote">#StayHomeStaySafe</p>
+    </div>
+
+
+    <svg class="icons">
+        <symbol id="refresh" viewBox="0 0 11 10" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8.53534 1.46875C7.62852 0.5625 6.38399 0 5.00188 0C2.23765 0 0.00500488 2.2375 0.00500488 5C0.00500488 7.7625 2.23765 10 5.00188 10C7.33459 10 9.27955 8.40625 9.83615 6.25H8.53534C8.02252 7.70625 6.63415 8.75 5.00188 8.75C2.93183 8.75 1.24953 7.06875 1.24953 5C1.24953 2.93125 2.93183 1.25 5.00188 1.25C6.04003 1.25 6.9656 1.68125 7.64103 2.3625L5.62727 4.375H10.005V0L8.53534 1.46875Z"
+                fill="white" />
+        </symbol>
+        <symbol id="cross" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z" />
+        </symbol>
+        <symbol id="info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z">
+            </path>
+        </symbol>
+    </svg>
+
+</body>
+
+
+<script src="js/reminder.js"></script>
+<script src="js/tracker.js"></script>
+<script src="js/popup.js"></script>
+<script src="helper.js"></script>
+
+
+</html>
