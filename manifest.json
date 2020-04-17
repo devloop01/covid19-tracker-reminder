@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Covid19 Tracker & Reminder",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Keep track of the covid-19 virus spread and also get reminded to wash your dirty hands.",
 	"permissions": ["alarms", "storage", "tabs"],
 	"background": {
