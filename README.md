@@ -3,6 +3,8 @@
 Install this simple chrome extension to track live updates of covid19 spread and get reminded to wash your hands. 
 If you dont care about graphs and visual appealing things then this extension will just show you the right thing, just the information you need.
 
+**chrome store:** https://chrome.google.com/webstore/detail/covid19-tracker-reminder/pmnnjplehiilacajeedionkokldnehfk
+
 # features 
  - Remids you to wash your hands after selected time.
  - Get live updates of covid19 spread.
